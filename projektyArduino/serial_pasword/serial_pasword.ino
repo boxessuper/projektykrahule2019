@@ -64,7 +64,7 @@ void changePassword () {
     {
       while (Serial.available()== 0){}
       char c = Serial.read ();
-      if (c == '\n') break;
+      if ((c == '\n') || (c == '\r')) break;
       newPass1[i]  = c;
       i++;
       if (i == 20) break;
@@ -77,7 +77,7 @@ void changePassword () {
     {
       while (Serial.available()== 0){}
       char c = Serial.read ();
-      if (c == '\n') break;
+      if ((c == '\n') || (c == '\r'))  break;
       newPass2[i]  = c;
       i++;
       if (i == 20) break;
@@ -107,7 +107,7 @@ void loginNow()
    {
      if (Serial.available()) {
        char c = Serial.read ();
-       if (c == '\n') break;
+       if ((c == '\n') || (c == '\r')) break;
        ent[i]  = c;
        i++;
        if (i == 20) break;
